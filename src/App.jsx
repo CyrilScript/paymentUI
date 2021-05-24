@@ -1,13 +1,18 @@
-import paymentCard from "./paymentCard.svg";
+import paymentCard from "./asset/paymentCard.svg";
+import user from "./asset/cyril.jpeg";
+import {ReactComponent as Paypal} from "./asset/paypal.svg";
+import {ReactComponent as Visa} from "./asset/visa.svg";
+import {ReactComponent as Discover} from "./asset/discover.svg";
 
 function App() {
   return (
     <div className="px-4 sm:px-8 md:px-16 lg:px-24 pb-24">
-      <header className="flex gap-3 sm:gap-6 md:gap-12 my-10 md:mb-14 font-medium text-xs sm:text-sm md:text-base">
-        <span className="md:flex-1"></span>
+      <header className="flex items-center gap-2 sm:gap-6 md:gap-12 my-10 md:mb-14 font-medium text-xs sm:text-sm md:text-base">
+        <span className="flex-1"></span>
         <span>TRIPS</span>
         <span>RECENTLY VIEWED</span>
         <span>BOOKINGS</span>
+        <span><img src={user} alt="" className="rounded-full h-10 w-10 bg-blue-600 hidden sm:block"/></span>
       </header>
 
       <div className="flex flex-col lg:flex-row border-t justify-between pt-8 gap-12">
@@ -21,7 +26,10 @@ function App() {
           </div>
         </div>
         <div className="w-full max-w-xl">
-          <div></div>
+          <div className="flex items-center">
+            <span className="flex-1"></span>
+          <Paypal width="4rem" height="4rem"/> <Visa width="4rem" height="4rem" className="p-3"/> <Discover width="4rem" height="4rem" className="pt-2"/>
+          </div>
           <form className="">
             <div className="flex flex-col sm:flex-row my-4 gap-8">
               <div className="w-full text-sm">
